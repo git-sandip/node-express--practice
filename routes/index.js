@@ -4,6 +4,7 @@ const userModel = require("./db");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
+  req.session.active = true; //setting  up an new session
   res.render("index", { title: "Express" });
 });
 /*Datebase  */
@@ -31,6 +32,28 @@ router.get("/delete", async (req, res, next) => {
     username: "sandycodes",
   });
   res.send(deletedUser);
+});
+
+//consoling the session what we implemented
+router.get("/session", (req, res, next) => {
+  console.log(req.session);
+  res.send("Check console");
+});
+//acessing the session values and performing some checkes
+router.get("/isActive", (req, res, next) => {
+  if (req.session.active === true) {
+    res.send("User is Active");
+  } else {
+    res.send("User is unactive");
+  }
+});
+
+//destroying the session with somne error handeling
+router.get("/sessiondestroy", (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.send("Session has been destroyed");
+  });
 });
 
 module.exports = router;
