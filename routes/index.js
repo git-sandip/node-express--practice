@@ -5,6 +5,7 @@ const userModel = require("./db");
 /* GET home page. */
 router.get("/", function (req, res, next) {
   req.session.active = true; //setting  up an new session
+  res.cookie("name", "sandip");
   res.render("index", { title: "Express" });
 });
 /*Datebase  */
@@ -54,6 +55,17 @@ router.get("/sessiondestroy", (req, res, next) => {
     if (err) throw err;
     res.send("Session has been destroyed");
   });
+});
+
+//reading an cookie
+
+router.get("/read", function (req, res, next) {
+  console.log(req.cookies.name);
+  res.send("Cookie has been consoled");
+});
+router.get("/dltc", function (req, res, next) {
+  res.clearCookie("name");
+  res.send("Cookie has been deleted");
 });
 
 module.exports = router;
