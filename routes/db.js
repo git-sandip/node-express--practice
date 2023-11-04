@@ -6,8 +6,22 @@ if (dbConnect) {
 }
 
 const UserSchema = mongoose.Schema({
-  username: String,
-  name: String,
-  age: Number,
+  username: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+  isAdmin: {
+    type: String,
+    default: "false",
+  },
 });
-module.exports = mongoose.model("users", UserSchema);
+let User = mongoose.model("users", UserSchema);
+module.exports = User;

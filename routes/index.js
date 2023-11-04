@@ -6,19 +6,36 @@ const userModel = require("./db");
 router.get("/", function (req, res, next) {
   req.session.active = true; //setting  up an new session
   res.cookie("name", "sandip");
-  res.render("index", { title: "Express" });
+  res.render("index");
+});
+router.get("/adduser", function (req, res, next) {
+  res.render("user");
 });
 /*Datebase  */
-// creating user
-router.get("/user", async (req, res, next) => {
-  const createduser = await userModel.create();
 
-  res.send(createduser);
+// creating user
+router.post("/user", async (req, res, next) => {
+  try {
+    const newUser = await userModel.create({
+      username: req.body.username,
+      name: req.body.name,
+      age: req.body.age,
+      isAdmin: req.body.isAdmin,
+    });
+    // Handle success, e.g., send a response to the client
+    res.status(201).json(newUser);
+  } catch (error) {
+    // Handle any errors, e.g., send an error response
+    console.error(error);
+    res.status(500).json({ error: "User creation failed" });
+  }
 });
+
 // finding all user
 router.get("/allusers", async (req, res, next) => {
-  let allUsers = await userModel.find();
-  res.send(allUsers);
+  let users = await userModel.find();
+
+  res.render("all", { users });
 });
 //finding one user
 router.get("/one", async (req, res, next) => {

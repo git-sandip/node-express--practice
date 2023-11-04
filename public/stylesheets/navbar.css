@@ -1,0 +1,39 @@
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: normal;
+}
+
+.navbar ul li a.active {
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: #c85959; /* Change color on hover */
+}

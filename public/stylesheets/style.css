@@ -1,8 +1,59 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.hero {
+  text-align: center;
+  padding: 20px;
 }
 
-a {
-  color: #00B7FF;
+.hero h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.links a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.button-hero {
+  margin-top: 20px;
+}
+
+.button-hero button.delete {
+  background-color: #bc2020;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-hero button.delete:hover {
+  background-color: #ff0000; /* Change background color on hover */
+}
+
+.button-hero button.search {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-hero button.search:hover {
+  background-color: rgb(4, 61, 4); /* Change background color on hover */
 }

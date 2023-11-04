@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add User</title>
+  </head>
+  <link rel="stylesheet" href="stylesheets/user.css" />
+  <link rel="stylesheet" href="stylesheets/navbar.css" />
+  <body>
+    <div class="navbar">
+      <a class="logo" href="/">USM</a>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Services</a></li>
+        <li><a href="/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <h1>User Registration Form</h1>
+      <form method="post" action="/user">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+        <label class="checkbox-label">
+          <input type="checkbox" id="isAdmin" name="isAdmin" />
+          Is Admin
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

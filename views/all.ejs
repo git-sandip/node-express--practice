@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/all.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a class="logo" href="/">USM</a>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Services</a></li>
+        <li><a href="/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <h1>User List</h1>
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Is Admin</th>
+        </tr>
+        <% users.forEach(function(user) { %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.name %></td>
+          <td><%= user.age %></td>
+          <td><%= user.isAdmin ? 'Yes' : 'No' %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8" />
+    <title>User Management System</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="navbar">
+      <a class="logo" href="/">USM</a>
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Services</a></li>
+        <li><a href="/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="hero">
+      <h1>User Management System</h1>
+      <div class="links">
+        <a href="/adduser">Add User</a>
+        <a href="/allusers">List Users</a>
+      </div>
+      <div class="button-hero">
+        <button class="delete">Delete User</button>
+        <button class="search">Search User</button>
+      </div>
+    </div>
   </body>
 </html>
