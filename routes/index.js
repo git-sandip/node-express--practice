@@ -15,12 +15,18 @@ router.get("/adduser", function (req, res, next) {
 
 // creating user
 router.post("/user", async (req, res, next) => {
+  const isAdmin = req.body.isAdmin;
+  let adminstatus = false;
+  if (isAdmin === "on") {
+    adminstatus = true;
+  }
+  console.log(adminstatus);
   try {
     const newUser = await userModel.create({
       username: req.body.username,
       name: req.body.name,
       age: req.body.age,
-      isAdmin: req.body.isAdmin,
+      isAdmin: adminstatus,
     });
     // Handle success, e.g., send a response to the client
     res.status(201).json(newUser);
